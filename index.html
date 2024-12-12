@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading App</title>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Splash Screen (optional) -->
+    <div id="splash-screen">
+        <h1>Welcome to Trading App</h1>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Main Container -->
+    <div id="app-container" style="display: none;">
+        <!-- Header -->
+        <header>
+            <h1>Trading Dashboard</h1>
+            <button onclick="logout()">Logout</button>
+        </header>
+
+        <!-- Live Trading Graph -->
+        <section id="trading-graph">
+            <h2>Live Trading Chart</h2>
+            <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_5d0d6&symbol=BTCUSD&interval=D&theme=dark" width="100%" height="300" frameborder="0"></iframe>
+        </section>
+
+        <!-- Investment Plans -->
+        <section id="investment-plans">
+            <h2>Investment Plans</h2>
+            <div class="plan" onclick="invest(580, 1450)">
+                <h3>₹580 → ₹1450</h3>
+                <button>Invest Now</button>
+            </div>
+            <div class="plan" onclick="invest(1060, 3300)">
+                <h3>₹1060 → ₹3300</h3>
+                <button>Invest Now</button>
+            </div>
+            <div class="plan" onclick="invest(4080, 10510)">
+                <h3>₹4080 → ₹10510</h3>
+                <button>Invest Now</button>
+            </div>
+            <div class="plan" onclick="invest(10230, 33070)">
+                <h3>₹10230 → ₹33070</h3>
+                <button>Invest Now</button>
+            </div>
+        </section>
+
+        <!-- Deposit and Withdraw Section -->
+        <section id="transactions">
+            <h2>Deposit & Withdraw</h2>
+            <button onclick="deposit()">Deposit</button>
+            <button onclick="withdraw()">Withdraw</button>
+        </section>
+
+        <!-- Transaction History -->
+        <section id="transaction-history">
+            <h2>Transaction History</h2>
+            <div id="history"></div>
+        </section>
+    </div>
+
+    <!-- Import external JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
